@@ -26,6 +26,13 @@
 		B8BFEEB322A6E13200BC4EC5 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BFEEA522A6E10300BC4EC5 /* RxRelay.framework */; };
 		B8BFEEB422A6E13200BC4EC5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BFEEA622A6E10300BC4EC5 /* RxSwift.framework */; };
 		B8BFEEB522A6E13200BC4EC5 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BFEEAD22A6E11C00BC4EC5 /* RxTest.framework */; };
+		B8BFEEB922A6E8C500BC4EC5 /* URLSessionStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFEEB822A6E8C500BC4EC5 /* URLSessionStandard.swift */; };
+		B8BFEEBC22A6E8F900BC4EC5 /* ErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFEEBB22A6E8F900BC4EC5 /* ErrorFactory.swift */; };
+		B8BFEEBF22A6E94F00BC4EC5 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFEEBE22A6E94F00BC4EC5 /* CommonError.swift */; };
+		B8BFEEC122A6E97F00BC4EC5 /* HttpRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFEEC022A6E97F00BC4EC5 /* HttpRequestSpec.swift */; };
+		B8BFEEC322A6E9B800BC4EC5 /* HttpHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFEEC222A6E9B800BC4EC5 /* HttpHandler.swift */; };
+		B8BFEEC622A6EA7300BC4EC5 /* HttpHandler+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFEEC522A6EA7300BC4EC5 /* HttpHandler+Extension.swift */; };
+		B8BFEEC822A6F10D00BC4EC5 /* FoursquareResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFEEC722A6F10D00BC4EC5 /* FoursquareResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +73,13 @@
 		B8BFEEA622A6E10300BC4EC5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		B8BFEEAD22A6E11C00BC4EC5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		B8BFEEAE22A6E11C00BC4EC5 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		B8BFEEB822A6E8C500BC4EC5 /* URLSessionStandard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionStandard.swift; sourceTree = "<group>"; };
+		B8BFEEBB22A6E8F900BC4EC5 /* ErrorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFactory.swift; sourceTree = "<group>"; };
+		B8BFEEBE22A6E94F00BC4EC5 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
+		B8BFEEC022A6E97F00BC4EC5 /* HttpRequestSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestSpec.swift; sourceTree = "<group>"; };
+		B8BFEEC222A6E9B800BC4EC5 /* HttpHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHandler.swift; sourceTree = "<group>"; };
+		B8BFEEC522A6EA7300BC4EC5 /* HttpHandler+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HttpHandler+Extension.swift"; sourceTree = "<group>"; };
+		B8BFEEC722A6F10D00BC4EC5 /* FoursquareResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +144,7 @@
 		B8BFEE5822A6CDF500BC4EC5 /* NearestRestaurantApp */ = {
 			isa = PBXGroup;
 			children = (
+				B8BFEEB622A6E82900BC4EC5 /* Utilities */,
 				B8BFEE8722A6CE2A00BC4EC5 /* Supporting Files */,
 				B8BFEE5922A6CDF500BC4EC5 /* AppDelegate.swift */,
 			);
@@ -202,6 +217,52 @@
 				B8BFEEA622A6E10300BC4EC5 /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B8BFEEB622A6E82900BC4EC5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B8BFEEC422A6EA4000BC4EC5 /* Extensions */,
+				B8BFEEBD22A6E93700BC4EC5 /* Entities */,
+				B8BFEEBA22A6E8EC00BC4EC5 /* Factories */,
+				B8BFEEB722A6E8B800BC4EC5 /* Protocols */,
+				B8BFEEC222A6E9B800BC4EC5 /* HttpHandler.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B8BFEEB722A6E8B800BC4EC5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B8BFEEB822A6E8C500BC4EC5 /* URLSessionStandard.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B8BFEEBA22A6E8EC00BC4EC5 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				B8BFEEBB22A6E8F900BC4EC5 /* ErrorFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		B8BFEEBD22A6E93700BC4EC5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B8BFEEBE22A6E94F00BC4EC5 /* CommonError.swift */,
+				B8BFEEC022A6E97F00BC4EC5 /* HttpRequestSpec.swift */,
+				B8BFEEC722A6F10D00BC4EC5 /* FoursquareResponse.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		B8BFEEC422A6EA4000BC4EC5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B8BFEEC522A6EA7300BC4EC5 /* HttpHandler+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,8 +471,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BFEEC122A6E97F00BC4EC5 /* HttpRequestSpec.swift in Sources */,
+				B8BFEEC322A6E9B800BC4EC5 /* HttpHandler.swift in Sources */,
+				B8BFEEBF22A6E94F00BC4EC5 /* CommonError.swift in Sources */,
 				B8BFEE5A22A6CDF500BC4EC5 /* AppDelegate.swift in Sources */,
+				B8BFEEC622A6EA7300BC4EC5 /* HttpHandler+Extension.swift in Sources */,
 				B8BFEE9F22A6D2D900BC4EC5 /* Config.swift in Sources */,
+				B8BFEEC822A6F10D00BC4EC5 /* FoursquareResponse.swift in Sources */,
+				B8BFEEB922A6E8C500BC4EC5 /* URLSessionStandard.swift in Sources */,
+				B8BFEEBC22A6E8F900BC4EC5 /* ErrorFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
