@@ -1,0 +1,10 @@
+language: swift
+osx_image: xcode10.2
+
+install: true
+
+script: ./Scripts/build.sh
+
+branches:
+  only:
+  - master

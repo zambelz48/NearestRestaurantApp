@@ -1,0 +1,17 @@
+//
+//  Development.xcconfig
+//  NearestRestaurantApp
+//
+//  Created by Nanda Julianda Akbar on 04/06/19.
+//  Copyright © 2019 Nanda Julianda Akbar. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APP_NAME = Nearest Restaurant (DEV)
+APP_BUNDLE_ID = com.nanda.NearestRestaurantApp.dev
+APP_VERSION = 1.0.0 (DEV)
+BASE_API_URL = https:/$()/api.foursquare.com/v2
+FOURSQUARE_CLIENT_ID = 5VHTYSB4VC4TAMNIU0F321GGJW443VTURSLEU2XTCIBFZSWA
+FOURSQUARE_SECRET_KEY = DDIUGWEBVGLMK2CW34IAVMRZ42MTHTV3TFAX0YT40C1JZDVU
