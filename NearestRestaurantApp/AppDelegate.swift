@@ -12,18 +12,28 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
+	
+	var appFlowController: AppFlowController?
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		
-		let model = VenuesDefaultModel(urlSession: URLSession.defaultConfig())
-		let viewModel = HomeDefaultViewModel(venuesModel: model)
-		let rootViewController = HomeViewController(viewModel: viewModel)
-		
 		window = UIWindow()
-		window?.rootViewController = UINavigationController(rootViewController: rootViewController)
+		window?.rootViewController = rootViewController()
 		window?.makeKeyAndVisible()
 		
 		return true
+	}
+	
+	func rootViewController() -> UIViewController {
+		
+		let mainNavigationController = UINavigationController()
+		appFlowController = AppFlowController(using: mainNavigationController)
+		
+		guard let navigationController = appFlowController?.navigationController else {
+			return mainNavigationController
+		}
+		
+		return navigationController
 	}
 
 }

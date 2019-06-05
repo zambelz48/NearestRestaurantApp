@@ -71,6 +71,7 @@
 		B8CEF5AF22A859380025619F /* VenueAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CEF5AE22A859380025619F /* VenueAnnotation.swift */; };
 		B8CEF5B122A871250025619F /* Rx+MapKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CEF5B022A871250025619F /* Rx+MapKitExtension.swift */; };
 		B8CEF5B322A871540025619F /* RxMKMapViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CEF5B222A871540025619F /* RxMKMapViewDelegateProxy.swift */; };
+		B8CEF5B522A8737C0025619F /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CEF5B422A8737C0025619F /* AppFlowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		B8CEF5AE22A859380025619F /* VenueAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueAnnotation.swift; sourceTree = "<group>"; };
 		B8CEF5B022A871250025619F /* Rx+MapKitExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+MapKitExtension.swift"; sourceTree = "<group>"; };
 		B8CEF5B222A871540025619F /* RxMKMapViewDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMKMapViewDelegateProxy.swift; sourceTree = "<group>"; };
+		B8CEF5B422A8737C0025619F /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +379,7 @@
 			children = (
 				B8CEF58422A830E90025619F /* General */,
 				B8CEF57A22A82EE80025619F /* Home */,
+				B8CEF5B422A8737C0025619F /* AppFlowController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				B8CEF58322A8309C0025619F /* Venues.swift in Sources */,
 				B8CEF58D22A833450025619F /* VenueDetail.swift in Sources */,
 				B8CEF58B22A832C90025619F /* VenueIcon.swift in Sources */,
+				B8CEF5B522A8737C0025619F /* AppFlowController.swift in Sources */,
 				B8CEF5AC22A8545C0025619F /* HomeViewController.swift in Sources */,
 				B8CEF57F22A82F640025619F /* VenuesModel.swift in Sources */,
 				B8BFEEC322A6E9B800BC4EC5 /* HttpHandler.swift in Sources */,
