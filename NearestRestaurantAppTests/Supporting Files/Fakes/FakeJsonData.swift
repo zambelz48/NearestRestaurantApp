@@ -34,6 +34,60 @@ final class FakeJsonData {
 		]
 	]
 	
+	static let foursquareVenuesJson: [String: Any] = [
+		"meta": [
+			"code": 200,
+			"requestId": "5cf6981b1ed21914bbe106ed"
+		],
+		"response": [
+			"venues": [
+				[
+					"id": "5291d1d6498e70f865cb23e3",
+					"name": "Foodcourt BMI",
+					"location": [
+						"address": "Komp. Bumi Manjahlega Indah",
+						"crossStreet": "Margahayu, Metro",
+						"lat": -6.95408,
+						"lng": 107.67058,
+						"labeledLatLngs": [
+							[
+								"label": "display",
+								"lat": -6.95408,
+								"lng": 107.67058
+							]
+						],
+						"distance": 521,
+						"cc": "ID",
+						"city": "Bandung",
+						"state": "Jawa Barat",
+						"country": "Indonesia",
+						"formattedAddress": [
+							"Komp. Bumi Manjahlega Indah (Margahayu, Metro)",
+							"Bandung",
+							"Jawa Barat",
+							"Indonesia"
+						]
+					],
+					"categories": [
+						[
+							"id": "4f2a210c4b9023bd5841ed28",
+							"name": "Housing Development",
+							"pluralName": "Housing Developments",
+							"shortName": "Housing Development",
+							"icon": [
+								"prefix": "https://ss3.4sqi.net/img/categories_v2/building/housingdevelopment_",
+								"suffix": ".png"
+							],
+							"primary": true
+						]
+					],
+					"referralId": "v-1559664667",
+					"hasPerk": false
+				]
+			]
+		]
+	]
+	
 	static let foursquareErrorJson: [String: Any] = [
 		"meta": [
 			"code": 400,
