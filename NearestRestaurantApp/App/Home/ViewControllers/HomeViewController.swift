@@ -41,12 +41,17 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		configureViewController()
 		configureMapView()
 		configureLocationManager()
 		
 		bindViewModel()
 		bindMapInteractions()
     }
+	
+	private func configureViewController() {
+		self.title = "Home"
+	}
 	
 	private func configureMapView() {
 		
