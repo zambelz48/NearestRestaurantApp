@@ -4,6 +4,7 @@ ROOT_DIR="$(pwd)"
 
 source "$ROOT_DIR/Scripts/utils.sh"
 source "$ROOT_DIR/Scripts/required-tools.sh"
+source "$ROOT_DIR/Scripts/install-dependencies.sh"
 
 OUTPUT_DIR="$ROOT_DIR/Output"
 DERIVEDDATA_DIR="$HOME/NearestRestaurantAppDerivedData"
