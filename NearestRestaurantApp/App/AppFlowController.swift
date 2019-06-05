@@ -33,6 +33,18 @@ final class AppFlowController {
 		let homeViewModel = HomeDefaultViewModel(venuesModel: venuesModel)
 		let homeViewController = HomeViewController(viewModel: homeViewModel)
 		
+		homeViewController.onEvent = { (event: HomeViewController.Event) in
+			
+			switch event {
+				
+			case .openVenueDetail(let id):
+				// TODO: Open venue detail later
+				print("Opening venue detail for id : \(id)")
+				
+			}
+			
+		}
+		
 		return homeViewController
 	}
 }

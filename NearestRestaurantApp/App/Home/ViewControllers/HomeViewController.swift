@@ -13,6 +13,12 @@ import RxCocoa
 
 final class HomeViewController: UIViewController {
 
+	enum Event {
+		case openVenueDetail(id: String)
+	}
+	
+	var onEvent: ((Event) -> ())?
+	
 	@IBOutlet private weak var mainMapView: MKMapView!
 	
 	private let locationManager: CLLocationManager = CLLocationManager()
@@ -73,14 +79,13 @@ final class HomeViewController: UIViewController {
 	private func bindMapInteractions() {
 		
 		mainMapView.rx.annotationSelected
-			.subscribe(onNext: { (annotationView: MKAnnotationView?) in
+			.subscribe(onNext: { [weak self] (annotationView: MKAnnotationView?) in
 				
 				guard let annotation = annotationView?.annotation as? VenueAnnotation else {
 					return
 				}
 				
-				// TODO: Show venue detail from here, later on
-				print("selected venue: \(annotation.address)")
+				self?.onEvent?(.openVenueDetail(id: annotation.id))
 			})
 			.disposed(by: disposeBag)
 	}
