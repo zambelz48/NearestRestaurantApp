@@ -105,13 +105,27 @@ final class HttpHandler {
 		var request = URLRequest(url: targetURL)
 		request.httpMethod = spec.method.rawValue
 		
-		spec.headers.forEach { (key: String, value: String) in
+		spec.headers.forEach ({ (key: String, value: String) in
 			request.setValue(value, forHTTPHeaderField: key)
-		}
+		})
 		
-		if (spec.parameters.count > 0) {
+		switch (!spec.parameters.isEmpty, spec.method) {
+			
+		case (true, .get):
+			
+			var urlComponents = URLComponents(string: spec.url)
+			urlComponents?.queryItems = spec.parameters.map ({ (key: String, value: Any) -> URLQueryItem in
+				return URLQueryItem(name: key, value: value as? String)
+			})
+			request.url = urlComponents?.url
+			
+		case (true, .post), (true, .put):
 			let httpBody = try? JSONSerialization.data(withJSONObject: spec.parameters)
 			request.httpBody = httpBody
+			
+		default:
+			break
+			
 		}
 		
 		return request
