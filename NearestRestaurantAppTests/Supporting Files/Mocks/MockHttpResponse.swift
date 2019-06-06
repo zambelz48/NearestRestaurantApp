@@ -24,6 +24,10 @@ final class MockHttpResponse {
 		return StubURLSession(statusCode: 200, fakeResponse: FakeJsonData.foursquareVenuesJson)
 	}
 	
+	static func successfulFoursquareVenueDetailURLSession() -> StubURLSession {
+		return StubURLSession(statusCode: 200, fakeResponse: FakeJsonData.foursquareVenueDetailJson)
+	}
+	
 	static func failedURLSession() -> StubURLSession {
 		return StubURLSession(statusCode: 400, fakeResponse: [])
 	}
