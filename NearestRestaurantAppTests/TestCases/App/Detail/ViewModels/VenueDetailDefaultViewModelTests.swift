@@ -66,5 +66,23 @@ class VenueDetailDefaultViewModelTests: XCTestCase {
 			venueAddressExpectation
 		], timeout: 3.0)
 	}
+	
+	func testFailedGetVenueDetail() {
+		
+		let loadExpectation = expectation(description: "Expected 'onError' event called")
+		
+		let mockVenueDetailModel = MockVenueDetailModel(isSuccess: false)
+		viewModel = VenueDetailDefaultViewModel(venueId: "venue-123", venueDetailModel: mockVenueDetailModel)
+		
+		viewModel.loadVenueError
+			.subscribe(onNext: { (error: Error) in
+				loadExpectation.fulfill()
+			})
+			.disposed(by: disposeBag)
+		
+		viewModel.reloadData()
+		
+		wait(for: [ loadExpectation ], timeout: 1.0)
+	}
 
 }
