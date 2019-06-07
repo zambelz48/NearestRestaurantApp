@@ -22,9 +22,8 @@ final class VenuesDefaultModel : VenuesModel {
 		let endpoint = VenuesEndpoint.fetch.rawValue
 		
 		var spec = HttpRequestSpec(url: endpoint)
-		spec.appendParameters(key: "client_id", value: Config.foursquareClientID)
-		spec.appendParameters(key: "client_secret", value: Config.foursquareSecretKey)
-		spec.appendParameters(key: "v", value: Config.foursquareApiVersion)
+		spec.constructFoursquareRequestSpec()
+		
 		spec.appendParameters(key: "query", value: "food")
 		spec.appendParameters(key: "ll", value: "\(request.latitude),\(request.longitude)")
 		spec.appendParameters(key: "radius", value: "\(request.radius)")
@@ -32,7 +31,7 @@ final class VenuesDefaultModel : VenuesModel {
 		let requestObservable: Observable<Venues> = httpHandler.foursquareRequestObservable(spec: spec)
 		
 		return requestObservable.concatMap({ (venues: Venues) -> Observable<[VenueDetail]> in
-			return Observable.from(optional: venues.venues)
+			return .from(optional: venues.venues)
 		})
 	}
 	

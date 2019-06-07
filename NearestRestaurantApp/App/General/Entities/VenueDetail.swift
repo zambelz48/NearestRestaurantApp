@@ -29,4 +29,29 @@ struct VenueDetail : Codable {
 		hasPerk = try container.decodeIfPresent(Bool.self, forKey: .hasPerk) ?? false
 	}
 	
+	func getVenueImageURLs() -> [String] {
+		
+		guard let categories = categories, categories.count > 0 else {
+			return [String]()
+		}
+		
+		return categories
+			.filter({ (category: VenueCategory) -> Bool in
+				
+				guard let icon = category.icon else {
+					return false
+				}
+				
+				return (!icon.prefix.isEmpty && !icon.suffix.isEmpty)
+			})
+			.compactMap({ (category: VenueCategory) -> String in
+				
+				guard let icon = category.icon else {
+					return ""
+				}
+				
+				return "\(icon.prefix)512\(icon.suffix)"
+			})
+	}
+	
 }

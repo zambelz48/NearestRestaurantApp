@@ -45,7 +45,7 @@ extension HttpHandler {
 			.map({ (result: T?) -> T in
 				
 				guard let validResult = result else {
-					return T.self as! T
+					return (T.self as! T)
 				}
 				
 				return validResult
@@ -66,13 +66,13 @@ extension HttpHandler {
 		
 		return observable
 			.concatMap({ (result: FoursquareResponse<T>) -> Observable<T> in
-				return Observable.from(optional: result.response)
+				return .from(optional: result.response)
 			})
 			.catchError({ (error: Error) -> Observable<T> in
 				
 				guard let commonError = error as? CommonError,
 					let errorData = commonError.message.data(using: .utf8) else {
-						return Observable<T>.error(error)
+						return .error(error)
 				}
 				
 				do {
@@ -83,7 +83,7 @@ extension HttpHandler {
 						let code = meta["code"] as? Int,
 						let errorType = meta["errorType"] as? String,
 						let errorDetail = meta["errorDetail"] as? String else {
-							return Observable<T>.error(error)
+							return .error(error)
 					}
 					
 					let foursquareError = NSError(
@@ -92,10 +92,10 @@ extension HttpHandler {
 						userInfo: [ NSLocalizedDescriptionKey : errorDetail ]
 					)
 					
-					return Observable<T>.error(foursquareError)
+					return .error(foursquareError)
 					
 				} catch {
-					return Observable<T>.error(error)
+					return .error(error)
 				}
 			})
 	}

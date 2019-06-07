@@ -12,10 +12,28 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
+	
+	private var appFlowController: AppFlowController?
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		
+		window = UIWindow()
+		window?.rootViewController = rootViewController()
+		window?.makeKeyAndVisible()
+		
 		return true
+	}
+	
+	func rootViewController() -> UIViewController {
+		
+		let mainNavigationController = UINavigationController()
+		appFlowController = AppFlowController(using: mainNavigationController)
+		
+		guard let navigationController = appFlowController?.navigationController else {
+			return mainNavigationController
+		}
+		
+		return navigationController
 	}
 
 }
