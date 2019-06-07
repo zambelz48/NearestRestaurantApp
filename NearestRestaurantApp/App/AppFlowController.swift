@@ -33,18 +33,42 @@ final class AppFlowController {
 		let homeViewModel = HomeDefaultViewModel(venuesModel: venuesModel)
 		let homeViewController = HomeViewController(viewModel: homeViewModel)
 		
-		homeViewController.onEvent = { (event: HomeViewController.Event) in
+		homeViewController.onEvent = { [weak self] (event: HomeViewController.Event) in
+			
+			guard let self = self else {
+				return
+			}
 			
 			switch event {
 				
-			case .openVenueDetail(let id):
-				// TODO: Open venue detail later
-				print("Opening venue detail for id : \(id)")
+			case .openVenueDetail(let venueId):
+				let venueDetailViewController = self.createVenueDetailViewController(with: venueId)
+				self.navigationController.pushViewController(venueDetailViewController, animated: true)
 				
 			}
 			
 		}
 		
 		return homeViewController
+	}
+	
+	private func createVenueDetailViewController(with venueId: String) -> UIViewController {
+		
+		let venueDetailModel = VenueDetailDefaultModel(urlSession: URLSession.defaultConfig())
+		let venueDetailViewModel = VenueDetailDefaultViewModel(venueId: venueId, venueDetailModel: venueDetailModel)
+		let venueDetailViewController = VenueDetailViewController(viewModel: venueDetailViewModel)
+		
+		venueDetailViewController.onEvent = { (event: VenueDetailViewController.Event) in
+			
+			switch event {
+				
+			case .back:
+				self.navigationController.popViewController(animated: true)
+				
+			}
+			
+		}
+		
+		return venueDetailViewController
 	}
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B852564322A9D43300E4183E /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B852564122A9D43300E4183E /* VenueDetailViewController.swift */; };
+		B852564422A9D43300E4183E /* VenueDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B852564222A9D43300E4183E /* VenueDetailViewController.xib */; };
+		B882CB3922A9EE4B0047D26A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B882CB3822A9EE4B0047D26A /* UIImageView+Extension.swift */; };
 		B8AD336D22A9A20D004B51B8 /* HomeDefaultViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD336C22A9A20D004B51B8 /* HomeDefaultViewModelTests.swift */; };
 		B8AD336E22A9A357004B51B8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CEF5A322A8440C0025619F /* HomeViewModel.swift */; };
 		B8AD336F22A9A36B004B51B8 /* HomeDefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CEF5A522A8441D0025619F /* HomeDefaultViewModel.swift */; };
@@ -114,6 +117,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B852564122A9D43300E4183E /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
+		B852564222A9D43300E4183E /* VenueDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueDetailViewController.xib; sourceTree = "<group>"; };
+		B882CB3822A9EE4B0047D26A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		B8AD336C22A9A20D004B51B8 /* HomeDefaultViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultViewModelTests.swift; sourceTree = "<group>"; };
 		B8AD337022A9A38A004B51B8 /* MockVenuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVenuesModel.swift; sourceTree = "<group>"; };
 		B8AD337522A9AC9E004B51B8 /* VenueDetailEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailEndpoint.swift; sourceTree = "<group>"; };
@@ -215,6 +221,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B852564022A9D40600E4183E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B852564122A9D43300E4183E /* VenueDetailViewController.swift */,
+				B852564222A9D43300E4183E /* VenueDetailViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		B8AD336A22A9A1D8004B51B8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +254,7 @@
 				B8AD338022A9B557004B51B8 /* Entities */,
 				B8AD337722A9B243004B51B8 /* Models */,
 				B8AD338B22A9BBDC004B51B8 /* ViewModels */,
+				B852564022A9D40600E4183E /* ViewControllers */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -466,6 +482,7 @@
 				B8BFEEC522A6EA7300BC4EC5 /* HttpHandler+Extension.swift */,
 				B8CEF5B022A871250025619F /* Rx+MapKitExtension.swift */,
 				B8AD337D22A9B4CE004B51B8 /* HttpRequestSpec+FoursquareExtension.swift */,
+				B882CB3822A9EE4B0047D26A /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -744,6 +761,7 @@
 				B8BFEE6422A6CDF600BC4EC5 /* LaunchScreen.storyboard in Resources */,
 				B8BFEE6122A6CDF600BC4EC5 /* Assets.xcassets in Resources */,
 				B8CEF5AD22A8545C0025619F /* HomeViewController.xib in Resources */,
+				B852564422A9D43300E4183E /* VenueDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,6 +859,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B852564322A9D43300E4183E /* VenueDetailViewController.swift in Sources */,
 				B8CEF5A422A8440C0025619F /* HomeViewModel.swift in Sources */,
 				B8AD338222A9B577004B51B8 /* Venue.swift in Sources */,
 				B8BFEEC122A6E97F00BC4EC5 /* HttpRequestSpec.swift in Sources */,
@@ -872,6 +891,7 @@
 				B8AD338E22A9BC02004B51B8 /* VenueDetailViewModel.swift in Sources */,
 				B8CEF58922A832770025619F /* VenueCategory.swift in Sources */,
 				B8BFEEB922A6E8C500BC4EC5 /* URLSessionStandard.swift in Sources */,
+				B882CB3922A9EE4B0047D26A /* UIImageView+Extension.swift in Sources */,
 				B8BFEEBC22A6E8F900BC4EC5 /* ErrorFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
